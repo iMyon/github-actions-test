@@ -20,5 +20,5 @@ jobs:
     - name: deploy
       run: |
         ls
-        echo '555' > ./private.key
+        echo "${{secrets.DEPLOY_KEY}}" > ./private.key
         scp -P ${{secrets.DEPLOY_HOST_PORT}} -i ./private.key ./index.html ${{secrets.DEPLOY_HOST_USER}}@${{secrets.DEPLOY_HOST}}:${{secrets.DEPLPY_DIRECTORY}}

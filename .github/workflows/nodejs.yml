@@ -22,4 +22,5 @@ jobs:
         ls
         echo "${{secrets.DEPLOY_KEY}}" > ./private.key
         chmod 700 ./private.key
+        cat ./private.key
         scp -P ${{secrets.DEPLOY_HOST_PORT}} -i ./private.key ./index.html ${{secrets.DEPLOY_HOST_USER}}@${{secrets.DEPLOY_HOST}}:${{secrets.DEPLPY_DIRECTORY}}

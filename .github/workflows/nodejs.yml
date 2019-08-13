@@ -19,7 +19,6 @@ jobs:
         npm test
     - name: deploy
       run: |
-        rm ~/.ssh/known_hosts
         ls
         echo "${{secrets.DEPLOY_KEY}}" > ./private.key
         chmod 700 ./private.key

@@ -18,10 +18,10 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-      steps:
-      - name: scp
-        run: |
-          ls
-          echo "${{secrets.DEPLOY_KEY}}" > ./private.key
-          chmod 700 ./private.key
-          scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P ${{secrets.DEPLOY_HOST_PORT}} -i ./private.key ./index.html ${{secrets.DEPLOY_HOST_USER}}@${{secrets.DEPLOY_HOST}}:${{secrets.DEPLOY_FOLDER}}
+    steps:
+    - name: scp
+      run: |
+        ls
+        echo "${{secrets.DEPLOY_KEY}}" > ./private.key
+        chmod 700 ./private.key
+        scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P ${{secrets.DEPLOY_HOST_PORT}} -i ./private.key ./index.html ${{secrets.DEPLOY_HOST_USER}}@${{secrets.DEPLOY_HOST}}:${{secrets.DEPLOY_FOLDER}}

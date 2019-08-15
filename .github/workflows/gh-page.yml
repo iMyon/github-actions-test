@@ -8,6 +8,6 @@ on:
 jobs:
   push-tmp:
     runs-on: ubuntu-latest
-      steps:
-        - uses: ./github/actions/publish-to-github-page
-        - name: push-to-tmp
+    steps:
+      - uses: ./github/actions/publish-to-github-page
+      - name: push-to-tmp

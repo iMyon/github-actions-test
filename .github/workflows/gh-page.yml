@@ -9,4 +9,5 @@ jobs:
   push-tmp:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@master
       - uses: ./github/actions/publish-to-github-page

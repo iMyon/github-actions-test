@@ -1,0 +1,13 @@
+name: push master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  push-tmp:
+    runs-on: ubuntu-latest
+      steps:
+        - uses: ./github/actions/publish-to-github-page
+        - name: push-to-tmp

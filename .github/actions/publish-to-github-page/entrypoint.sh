@@ -14,9 +14,15 @@ git remote add publisher "${remote_repo}"
 git show-ref # useful for debugging
 git branch --verbose
 
+# copy dist files
+mkdir ~/dist
+cp ./index.html ~/dist/
+
 # publish any new files
-git checkout -b tmp
-echo $(date -u) >> date.txt
+git checkout --orphan gh-pages
+git checkout gh-pages
+git rm -rf .
+cp -r ~/dist/* .
 git add -A
 timestamp=$(date -u)
 git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}"

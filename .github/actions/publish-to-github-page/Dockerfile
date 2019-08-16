@@ -1,7 +1,7 @@
 FROM alpine
 
-RUN apk add --no-cache git openssh-client
+RUN apk add --no-cache git openssh-client bash
 
 ADD *.sh /
 
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+ENTRYPOINT ["bash", "/entrypoint.sh"]

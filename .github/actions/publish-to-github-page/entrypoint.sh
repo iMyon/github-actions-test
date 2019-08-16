@@ -19,8 +19,8 @@ mkdir ~/dist
 cp ${DIST_FOLDER} ~/dist/
 
 # publish any new files
-dist_branch="gh-pages"
 repo_name=`echo "${GITHUB_REPOSITORY}" | cut -d "/" -f 2`
+dist_branch="gh-pages"
 
 if git ls-remote | grep -sw ${dist_branch} 2>&1>/dev/null; then
  git checkout ${dist_branch}

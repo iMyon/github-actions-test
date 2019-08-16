@@ -8,8 +8,8 @@ fi
 
 # initialize git
 remote_repo="https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-git config user.name "Automated Publisher"
-git config user.email "publish-to-github-action@users.noreply.github.com"
+git config user.name "publish-bot"
+git config user.email "publish-bot@github.com"
 git remote add publisher "${remote_repo}"
 git show-ref # useful for debugging
 git branch --verbose

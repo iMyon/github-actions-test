@@ -3,7 +3,7 @@ name: push develop
 on:
   push:
     branches:
-      - develop
+      - master
 
 jobs:
   push-tmp:

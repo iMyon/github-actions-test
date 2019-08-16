@@ -16,13 +16,14 @@ git branch --verbose
 
 # copy dist files
 mkdir ~/dist
-cp ./index.html ~/dist/
+cp ${DIST_FOLDER} ~/dist/
 
 # publish any new files
 dist_branch="gh-pages"
 git checkout --orphan ${dist_branch}
 git checkout ${dist_branch}
 git rm -rf .
+echo "https://${GITHUB_ACTOR}.github.io/${GITHUB_REPOSITORY}" > README.md
 cp -r ~/dist/* .
 git add -A
 timestamp=$(date -u)

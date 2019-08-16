@@ -20,10 +20,11 @@ cp ${DIST_FOLDER} ~/dist/
 
 # publish any new files
 dist_branch="gh-pages"
+repo_name=`echo "${GITHUB_REPOSITORY}" | cut -d "/" -f 2`
 git checkout --orphan ${dist_branch}
 git checkout ${dist_branch}
 git rm -rf .
-echo "https://${GITHUB_ACTOR}.github.io/${GITHUB_REPOSITORY}" > README.md
+echo "https://${GITHUB_ACTOR}.github.io/${repo_name}" > README.md
 cp -r ~/dist/* .
 git add -A
 timestamp=$(date -u)

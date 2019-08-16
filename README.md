@@ -20,4 +20,14 @@ push触发，会自动运行测试并部署到服务器，需要在**Setting**-*
 - `DEPLOY_KEY`: 用户对应的登陆私钥
 - `DEPLOY_FOLDER`: 部署目录，会复制静态文件到这里，需要事先在服务器配置好web服务器，比如nginx需要配置静态服务
 
-最终实现把`index.html`部署到服务器，[成果](https://github-actions-test.uuzsama.me)。
+最终实现把`index.html`部署到服务器。
+
+[成果](https://github-actions-test.uuzsama.me)
+
+### 自动部署到github pages
+
+[nodejs.yml](.github/workflows/gh-pages.yml)、自定义action[publish-to-github-page](.github/actions/publish-to-github-page)
+
+[成果](https://imyon.github.io/github-actions-test/)
+
+

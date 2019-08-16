@@ -23,9 +23,9 @@ jobs:
     - name: deploy(scp) to server
       run: |
         ls
-        echo "${{secrets.DEPLOY_KEY}}" > ./private.key
-        chmod 700 ./private.key
-        scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P ${{secrets.DEPLOY_HOST_PORT}} -i ./private.key -r ./dist ${{secrets.DEPLOY_HOST_USER}}@${{secrets.DEPLOY_HOST}}:${{secrets.DEPLOY_FOLDER}}
+        echo "${{secrets.DEPLOY_KEY}}" > ~/private.key
+        chmod 700 ~/private.key
+        scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -P ${{secrets.DEPLOY_HOST_PORT}} -i ~/private.key -r ./dist ${{secrets.DEPLOY_HOST_USER}}@${{secrets.DEPLOY_HOST}}:${{secrets.DEPLOY_FOLDER}}
 
     - name: deploy to github pages
       uses: ./.github/actions/publish-to-github-page

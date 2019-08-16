@@ -21,8 +21,13 @@ cp ${DIST_FOLDER} ~/dist/
 # publish any new files
 dist_branch="gh-pages"
 repo_name=`echo "${GITHUB_REPOSITORY}" | cut -d "/" -f 2`
-git checkout --orphan ${dist_branch}
-git checkout ${dist_branch}
+
+if git ls-remote | grep -sw ${dist_branch} 2>&1>/dev/null; then
+ git checkout ${dist_branch}
+else
+ git checkout --orphan ${dist_branch}
+fi
+
 git rm -rf .
 echo "https://${GITHUB_ACTOR}.github.io/${repo_name}" > README.md
 cp -r ~/dist/* .

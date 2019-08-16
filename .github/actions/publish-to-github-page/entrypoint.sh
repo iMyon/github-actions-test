@@ -18,7 +18,8 @@ git branch --verbose
 git add -A
 timestamp=$(date -u)
 git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}"
-git branch tmp
+git checkout -b tmp
+echo $(date -u) >> date.txt
 #git checkout master
 #git merge tmp
 git push publisher tmp

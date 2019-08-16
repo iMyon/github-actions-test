@@ -19,11 +19,12 @@ mkdir ~/dist
 cp ./index.html ~/dist/
 
 # publish any new files
-git checkout --orphan gh-pages
-git checkout gh-pages
+dist_branch="gh-pages"
+git checkout --orphan ${dist_branch}
+git checkout ${dist_branch}
 git rm -rf .
 cp -r ~/dist/* .
 git add -A
 timestamp=$(date -u)
 git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}"
-git push publisher tmp
+git push publisher ${dist_branch}

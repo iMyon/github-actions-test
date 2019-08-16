@@ -16,7 +16,7 @@ git branch --verbose
 
 # copy dist files
 mkdir ~/dist
-cp ${DIST_FOLDER} ~/dist/
+cp -r ${DIST_FOLDER}/* ~/dist/
 
 # publish any new files
 repo_name=`echo "${GITHUB_REPOSITORY}" | cut -d "/" -f 2`

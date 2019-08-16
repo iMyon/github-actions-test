@@ -29,6 +29,7 @@ else
 fi
 
 git rm -rf .
+rm -rf ./*
 echo "https://${GITHUB_ACTOR}.github.io/${repo_name}" > README.md
 cp -r ~/dist/* .
 git add -A

@@ -15,11 +15,9 @@ git show-ref # useful for debugging
 git branch --verbose
 
 # publish any new files
+git checkout -b tmp
+echo $(date -u) >> date.txt
 git add -A
 timestamp=$(date -u)
 git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}"
-git checkout -b tmp
-echo $(date -u) >> date.txt
-#git checkout master
-#git merge tmp
 git push publisher tmp
